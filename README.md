@@ -7,7 +7,7 @@ clone the repo on to a location on your drive
 
 setup virtual environment
 ```` shell
-pip freeze > .\requirements.txt
+pip install -r .\requirements.txt
 ````
 ```` shell
 python server.py
