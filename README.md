@@ -18,7 +18,8 @@ Download the docker image
 ```` shell
 docker pull peezus/flask_boilerplate
 ````
-https://hub.docker.com/r/peezus/flask_boilerplate/tags
+To find the right tag bellow refer to: https://hub.docker.com/r/peezus/flask_boilerplate/tags
+
 run the image
 ```` shell
 docker run -d -p 5000:5000 --name service-name peezus/flask_boilerplate:<tag>
