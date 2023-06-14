@@ -1,0 +1,12 @@
+
+
+param_injector:
+  deployment:
+    name: k8s-deploy-injector-deploy
+    container_name: k8s-deploy-injector
+    image: peezus/k8s-deploy-parameters
+    pull_policy: Always
+    replica: 1
+  service:
+    service_name: k8s-deploy-parameters-service
+    deployment_name: k8s-deploy-injector-deploy

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-deploy-injector-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-deploy-injector
+  template:
+    metadata:
+      labels:
+        app: k8s-deploy-injector
+    spec:
+      containers:
+      - name: k8s-deploy-injector
+        image: peezus/k8s-deploy-parameters
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+

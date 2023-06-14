@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.param_injector.deployment.name }}
+spec:
+  replicas: {{ .Values.param_injector.deployment.replica }}
+  selector:
+    matchLabels:
+      app: {{ .Values.param_injector.deployment.container_name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.param_injector.deployment.container_name }}
+    spec:
+      containers:
+      - name: {{ .Values.param_injector.deployment.container_name }}
+        image: {{ .Values.param_injector.deployment.image }}
+        imagePullPolicy: {{ .Values.param_injector.deployment.pull_policy }}
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+
